@@ -2,6 +2,10 @@
 
 ans=""
 
+if [ "$1" == "-y" ]; then
+    ans="y"
+fi
+
 while [ "$ans" != "y" ] && [ "$ans" != "yes" ] && [ "$ans" != "n" ] && [ "$ans" != "no" ]; do
 
     echo -e "Generate Certs? WARNING this will delete any existing Certs. Continue? (y/n): \c "

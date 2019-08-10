@@ -1,3 +1,20 @@
+ans=""
+
+if [ "$1" == "-y" ]; then
+    ans="y"
+fi
+
+while [ "$ans" != "y" ] && [ "$ans" != "yes" ] && [ "$ans" != "n" ] && [ "$ans" != "no" ]; do
+
+    echo -e "Generate Profile? WARNING this will delete any existing profiles. Continue? (y/n): \c "
+    read ans
+
+    ans="$(echo -e "${ans}" | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]')"
+
+done
+
+if [ "$ans" == "y" ] || [ "$ans" == "yes" ]; then
+
 cd conf
 
 rm profile.conf
@@ -62,3 +79,5 @@ echo "-----END CA CERT-----" >> profile.conf
 echo "-----END NODE-----" >> profile.conf
 
 rm -rf profile_tmp/
+
+fi

@@ -2,6 +2,10 @@
 
 ans=""
 
+if [ "$1" == "-y" ]; then
+    ans="y"
+fi
+
 while [ "$ans" != "y" ] && [ "$ans" != "yes" ] && [ "$ans" != "n" ] && [ "$ans" != "no" ]; do
 
     echo -e "Generate CAs? WARNING this will delete any existing CAs. Continue? (y/n): \c "
