@@ -3,3 +3,5 @@ conf/data/
 *.pem
 
 conf/profile.conf
+
+ca/
