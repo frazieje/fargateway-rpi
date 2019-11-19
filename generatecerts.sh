@@ -32,6 +32,10 @@ openssl genrsa -out authkey.pem 2048
 
 openssl pkcs8 -topk8 -inform PEM -outform PEM -in authkey.pem -out authkey8.pem -nocrypt
 
+chmod 644 authkey.pem
+
+chmod 644 authkey8.pem
+
 openssl req -new -key authkey.pem -out req.pem -outform PEM -subj /CN=devicecontrol/O=server/ -nodes
 
 cd ../../../../ca/authca
@@ -59,6 +63,10 @@ openssl genrsa -out authkey.pem 2048
 
 openssl pkcs8 -topk8 -inform PEM -outform PEM -in authkey.pem -out authkey8.pem -nocrypt
 
+chmod 644 authkey.pem
+
+chmod 644 authkey8.pem
+
 openssl req -new -key authkey.pem -out req.pem -outform PEM -subj /CN=rabbitmq/O=client/ -nodes
 
 cd ../../../../ca/authca
@@ -81,6 +89,10 @@ cd client
 openssl genrsa -out key.pem 2048
 
 openssl pkcs8 -topk8 -inform PEM -outform PEM -in key.pem -out key8.pem -nocrypt
+
+chmod 644 key.pem
+
+chmod 644 key8.pem
 
 openssl req -new -key key.pem -out req.pem -outform PEM -subj /CN=devicecontrol/O=client/ -nodes
 
@@ -105,6 +117,10 @@ openssl genrsa -out key.pem 2048
 
 openssl pkcs8 -topk8 -inform PEM -outform PEM -in key.pem -out key8.pem -nocrypt
 
+chmod 644 key.pem
+
+chmod 644 key8.pem
+
 openssl req -new -key key.pem -out req.pem -outform PEM -subj /CN=rabbitmq/O=server/ -nodes
 
 cd ../../../ca/mqca
@@ -118,7 +134,3 @@ rm ../../conf/rabbitmq/server/req.pem
 cd ../../
 
 fi
-
-
-
-

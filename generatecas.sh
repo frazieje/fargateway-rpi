@@ -32,7 +32,11 @@ touch index.txt
 
 openssl req -x509 -config mqopenssl.cnf -newkey rsa:4096 -days 7300 -out cacert.pem -outform PEM -subj /CN=fargatewayMqCA/ -nodes
 
-cd ..
+cd private
+
+chmod 644 cakey.pem
+
+cd ../../
 
 mkdir authca
 cd authca
@@ -43,6 +47,10 @@ echo 01 > serial
 touch index.txt
 
 openssl req -x509 -config authopenssl.cnf -newkey rsa:4096 -days 7300 -out cacert.pem -outform PEM -subj /CN=fargatewayAuthCA/ -nodes
+
+cd private
+
+chmod 644 cakey.pem
 
 fi
 
