@@ -84,7 +84,7 @@ openssl pkcs8 -topk8 -inform PEM -outform PEM -in key.pem -out key8.pem -nocrypt
 
 openssl req -new -key key.pem -out req.pem -outform PEM -subj /CN=devicecontrol/O=client/ -nodes
 
-cd ../../../../ca/mqca
+cd ../../../ca/mqca
 
 openssl ca -config mqopenssl.cnf -in ../../conf/rabbitmq/client/req.pem -out ../../conf/rabbitmq/client/cert.pem -days 3650 -notext -batch -extensions client_ca_extensions
 
@@ -107,7 +107,7 @@ openssl pkcs8 -topk8 -inform PEM -outform PEM -in key.pem -out key8.pem -nocrypt
 
 openssl req -new -key key.pem -out req.pem -outform PEM -subj /CN=rabbitmq/O=server/ -nodes
 
-cd ../../../../ca/mqca
+cd ../../../ca/mqca
 
 openssl ca -config mqopenssl.cnf -in ../../conf/rabbitmq/server/req.pem -out ../../conf/rabbitmq/server/cert.pem -days 3650 -notext -batch -extensions server_ca_extensions
 
