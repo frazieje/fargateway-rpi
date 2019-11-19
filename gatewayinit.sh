@@ -2,7 +2,7 @@
 
 ./generatecas.sh -y
 
-./gneratecerts.sh -y
+./generatecerts.sh -y
 
 ./generateprofile.sh -y
 
