@@ -16,7 +16,7 @@ if [ "$ans" == "y" ] || [ "$ans" == "yes" ]; then
     echo -e "Please enter the WiFi SSID: \c "
     read  ssid
 
-    WPACONF=/home/frazieje/img/test.conf
+    WPACONF=/etc/wpa_supplicant/wpa_supplicant.conf
 
     passphrase="none"
 
