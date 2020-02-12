@@ -1,0 +1,1 @@
+{"views":{"by_email":{"map":"function (doc) {\n  emit(doc.email, { \"_id\": doc._id, \"_rev\": doc._rev, \"email\": doc.email, \"password\": doc.password, \"firstName\": doc.firstName, \"lastName\": doc.lastName, \"permissions\": doc.permissions });\n}"}},"language":"javascript"}
