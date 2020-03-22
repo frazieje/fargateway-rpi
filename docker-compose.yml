@@ -12,6 +12,11 @@ services:
       - 8443:8443
       - 9443:9443
       - 15984:15984
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10M"
+        max-file: "5"
     volumes:
       - ./conf/devicecontrol/devicecontrol.conf:/opt/devicecontrol/devicecontrol.conf
       - ./conf/profile.conf:/opt/devicecontrol/profile/profile.conf
